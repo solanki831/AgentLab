@@ -1,0 +1,23 @@
+{
+  "SchemaVersion": "1.0",
+  "ProductTitle": "AI API Contract Validator",
+  "ProductDescription": "Validates API responses against expected contracts and schemas. Detects breaking changes, missing fields, and type mismatches.",
+  "ProductVersion": "1.0.0",
+  "ProductCategory": "API Testing",
+  "Pricing": {
+    "Model": "per_call",
+    "PricePerUnit": 0.03,
+    "Currency": "USD"
+  },
+  "SupportInformation": {
+    "Email": "support@aitestingsuite.com",
+    "Documentation": "https://docs.example.com/contract-validator"
+  },
+  "Tags": [
+    "api",
+    "contract",
+    "schema",
+    "validation",
+    "testing"
+  ]
+}

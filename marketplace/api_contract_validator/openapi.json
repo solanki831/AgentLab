@@ -1,0 +1,71 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "AI API Contract Validator",
+    "version": "1.0.0",
+    "description": "Validates API responses against expected contracts and schemas. Detects breaking changes, missing fields, and type mismatches.",
+    "contact": {
+      "email": "support@aitestingsuite.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.yourdomain.com/v1",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/agents/api_contract_validator/run": {
+      "post": {
+        "summary": "Run AI API Contract Validator",
+        "description": "Validates API responses against expected contracts and schemas. Detects breaking changes, missing fields, and type mismatches.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "description": "Target URL to test"
+                  },
+                  "options": {
+                    "type": "object",
+                    "description": "Additional options"
+                  }
+                },
+                "required": [
+                  "url"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Test results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "report": {
+                      "type": "string"
+                    },
+                    "score": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

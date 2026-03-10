@@ -1,0 +1,71 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "AI Mobile App Tester",
+    "version": "1.0.0",
+    "description": "Mobile application testing using Appium integration. Tests iOS and Android apps for functionality, performance, and UI consistency.",
+    "contact": {
+      "email": "support@aitestingsuite.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.yourdomain.com/v1",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/agents/mobile_app_tester/run": {
+      "post": {
+        "summary": "Run AI Mobile App Tester",
+        "description": "Mobile application testing using Appium integration. Tests iOS and Android apps for functionality, performance, and UI consistency.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "description": "Target URL to test"
+                  },
+                  "options": {
+                    "type": "object",
+                    "description": "Additional options"
+                  }
+                },
+                "required": [
+                  "url"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Test results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "report": {
+                      "type": "string"
+                    },
+                    "score": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "title": "AI API Contract Validator",
+    "description": "Validates API responses against expected contracts and schemas. Detects breaking changes, missing fields, and type mismatches.",
+    "summary": "Validates API responses against expected contracts and schemas. Detects breaking changes, missing fi",
+    "categories": [
+      "API Testing"
+    ],
+    "version": "1.0.0",
+    "publisher": "AI Testing Suite"
+  },
+  "parameters": {
+    "endpointUrl": {
+      "type": "string",
+      "metadata": {
+        "description": "Target URL for testing"
+      }
+    }
+  },
+  "resources": [],
+  "outputs": {
+    "agentId": {
+      "type": "string",
+      "value": "api_contract_validator"
+    }
+  }
+}

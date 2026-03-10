@@ -1,0 +1,24 @@
+{
+  "SchemaVersion": "1.0",
+  "ProductTitle": "AI Browser Automation Agent",
+  "ProductDescription": "End-to-end browser automation testing with Playwright. Cross-browser testing, screenshot comparison, and comprehensive UI validation.",
+  "ProductVersion": "1.0.0",
+  "ProductCategory": "E2E Testing",
+  "Pricing": {
+    "Model": "per_call",
+    "PricePerUnit": 0.1,
+    "Currency": "USD"
+  },
+  "SupportInformation": {
+    "Email": "support@aitestingsuite.com",
+    "Documentation": "https://docs.example.com/browser-automation"
+  },
+  "Tags": [
+    "e2e",
+    "playwright",
+    "browser",
+    "automation",
+    "testing",
+    "ui"
+  ]
+}

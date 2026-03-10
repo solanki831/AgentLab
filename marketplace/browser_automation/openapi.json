@@ -1,0 +1,71 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "AI Browser Automation Agent",
+    "version": "1.0.0",
+    "description": "End-to-end browser automation testing with Playwright. Cross-browser testing, screenshot comparison, and comprehensive UI validation.",
+    "contact": {
+      "email": "support@aitestingsuite.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.yourdomain.com/v1",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/agents/browser_automation/run": {
+      "post": {
+        "summary": "Run AI Browser Automation Agent",
+        "description": "End-to-end browser automation testing with Playwright. Cross-browser testing, screenshot comparison, and comprehensive UI validation.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "description": "Target URL to test"
+                  },
+                  "options": {
+                    "type": "object",
+                    "description": "Additional options"
+                  }
+                },
+                "required": [
+                  "url"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Test results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "report": {
+                      "type": "string"
+                    },
+                    "score": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "SchemaVersion": "1.0",
+  "ProductTitle": "AI Visual Regression Tester",
+  "ProductDescription": "Detects visual changes in web applications across different viewports. Compares screenshots and identifies UI regressions.",
+  "ProductVersion": "1.0.0",
+  "ProductCategory": "UI Testing",
+  "Pricing": {
+    "Model": "per_call",
+    "PricePerUnit": 0.1,
+    "Currency": "USD"
+  },
+  "SupportInformation": {
+    "Email": "support@aitestingsuite.com",
+    "Documentation": "https://docs.example.com/visual-tester"
+  },
+  "Tags": [
+    "visual",
+    "regression",
+    "ui",
+    "screenshot",
+    "testing"
+  ]
+}

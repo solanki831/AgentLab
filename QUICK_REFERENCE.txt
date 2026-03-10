@@ -1,0 +1,254 @@
+# ⚡ QUICK REFERENCE CARD
+
+## 🚀 Start in 30 Seconds
+
+```bash
+# Terminal 1: Start Ollama
+ollama serve
+
+# Terminal 2: Launch Dashboard
+streamlit run agent_dashboard.py
+```
+
+**Open:** http://localhost:8501
+
+---
+
+## 📊 Dashboard Tabs
+
+| Tab | Purpose | What to Do |
+|-----|---------|-----------|
+| 📊 **System Status** | Check everything | Verify Ollama, Agents, MCP |
+| 🎯 **All Agents** | Browse agents | See 30+ agents by category |
+| 🧪 **LLM Testing** | Test models | Compare models performance |
+| 🧬 **Agent Testing** | Run agents | Test Security, API, etc. |
+| 📚 **Documentation** | Learn | Read guides & config |
+
+---
+
+## 🧪 Quick Tests
+
+### Check Everything
+```bash
+python verify_framework.py
+```
+
+### Test a Model
+```python
+from framework.llm_model_tester import LLMModelTester
+import asyncio
+
+async def test():
+    tester = LLMModelTester()
+    result = await tester.test_single_model(
+        "llama3.2:latest",
+        "What is AI?"
+    )
+    print(result)
+
+asyncio.run(test())
+```
+
+### List All Agents
+```python
+from framework.agent_registry import get_registry
+
+registry = get_registry()
+agents = registry.get_all_metadata()
+for agent in agents:
+    print(f"{agent.name}: {agent.description}")
+```
+
+---
+
+## 🔧 Common Commands
+
+```bash
+# Start Ollama server
+ollama serve
+
+# Pull a model
+ollama pull llama3.2:latest
+
+# List models
+ollama list
+
+# Launch dashboard
+streamlit run agent_dashboard.py
+
+# Verify setup
+python verify_framework.py
+
+# Test LLM tester
+python -m framework.llm_model_tester
+```
+
+---
+
+## 📦 Available Models
+
+- **llama3.2:1b** - Fast, lightweight (1B parameters)
+- **llama3.2:latest** - Balanced (8B parameters)
+- **llama3:latest** - Larger, more capable (8B parameters)
+
+**Add more:**
+```bash
+ollama pull mistral:latest
+ollama pull neural-chat:latest
+```
+
+---
+
+## 🎯 Agent Categories (30+)
+
+```
+📱 UI Testing
+├─ UIVisualRegressionAgent
+├─ MobileAppTestAgent
+└─ E2ETestAgent
+
+🔌 API Testing
+├─ APIAgent
+├─ APIContractTestingAgent
+└─ GraphQLTestAgent
+
+🔐 Security
+├─ SecurityScanAgent
+└─ AccessibilityTestingAgent
+
+📊 Data
+├─ DatabaseAgent
+├─ ExcelAgent
+└─ DataValidationAgent
+
++ More in Compliance, Performance, ML, etc.
+```
+
+---
+
+## 🔗 MCP Integration
+
+All MCPs are **automatically configured**:
+- ✅ MySQL - Database ops
+- ✅ REST API - HTTP calls
+- ✅ Excel - Spreadsheet ops
+- ✅ Filesystem - File ops
+- ✅ Playwright - Browser automation
+
+---
+
+## 📝 File Locations
+
+```
+AgenticAIAutoGen/
+├── agent_dashboard.py          ← Launch this!
+├── verify_framework.py
+├── framework/
+│   ├── llm_model_tester.py    ← Model testing
+│   ├── agent_registry.py       ← All agents
+│   ├── agentFactory.py         ← Create agents
+│   ├── mcp_config.py           ← MCP setup
+│   └── ...
+└── AGENT_DASHBOARD_GUIDE.md    ← Full docs
+```
+
+---
+
+## 🐛 Troubleshooting
+
+| Problem | Solution |
+|---------|----------|
+| "Could not connect to Ollama" | Run `ollama serve` |
+| "No models found" | Run `ollama pull llama3.2:latest` |
+| "Dashboard won't open" | Check port 8501 is free |
+| "MCP tool failed" | Check npx/npm installed |
+
+---
+
+## 💻 Code Snippets
+
+### Get Ollama Client
+```python
+from framework.ollama_helper import create_ollama_client
+client = create_ollama_client()
+```
+
+### Create Agent
+```python
+from framework.agentFactory import AgentFactory
+factory = AgentFactory(client)
+agent = factory.create_api_agent()
+```
+
+### Test Models
+```python
+from framework.llm_model_tester import LLMModelTester
+tester = LLMModelTester()
+comparison = await tester.compare_models(models, prompt)
+```
+
+### Get Agent Info
+```python
+from framework.agent_registry import get_registry
+registry = get_registry()
+api_agents = registry.get_agents_by_category("api")
+```
+
+---
+
+## 📚 Documentation
+
+| Doc | Link | Purpose |
+|-----|------|---------|
+| **Quick Start** | AGENT_DASHBOARD_GUIDE.md | Getting started |
+| **Implementation** | IMPLEMENTATION_COMPLETE.md | What was built |
+| **Components** | COMPONENTS_VERIFICATION.md | Component details |
+| **Code Docs** | Docstrings in files | Function details |
+
+---
+
+## ✅ Status Check
+
+```bash
+# Quick status
+streamlit run agent_dashboard.py
+# Go to "System Status" tab
+
+# Detailed status
+python verify_framework.py
+# Check verification_results.json
+```
+
+---
+
+## 🎓 Next Steps
+
+1. **Quick Start** → Run dashboard
+2. **Explore** → Browse all agents
+3. **Test** → Compare models
+4. **Verify** → Run verification script
+5. **Integrate** → Use in your code
+
+---
+
+## 🔑 Key Points
+
+- ✅ **No API Keys** - Uses local Ollama
+- ✅ **30+ Agents** - Ready to use
+- ✅ **Full MCP** - Advanced capabilities
+- ✅ **Web UI** - Easy to use
+- ✅ **Production Ready** - Fully tested
+
+---
+
+## 📞 Help
+
+- **In-app Help** → Dashboard "Documentation" tab
+- **Full Guide** → AGENT_DASHBOARD_GUIDE.md
+- **Code Docs** → Function docstrings
+- **Errors** → Run verify_framework.py
+
+---
+
+**Last Updated:** February 3, 2026  
+**Status:** ✅ Production Ready

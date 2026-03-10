@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "title": "AI Mobile App Tester",
+    "description": "Mobile application testing using Appium integration. Tests iOS and Android apps for functionality, performance, and UI consistency.",
+    "summary": "Mobile application testing using Appium integration. Tests iOS and Android apps for functionality, p",
+    "categories": [
+      "Mobile Testing"
+    ],
+    "version": "1.0.0",
+    "publisher": "AI Testing Suite"
+  },
+  "parameters": {
+    "endpointUrl": {
+      "type": "string",
+      "metadata": {
+        "description": "Target URL for testing"
+      }
+    }
+  },
+  "resources": [],
+  "outputs": {
+    "agentId": {
+      "type": "string",
+      "value": "mobile_app_tester"
+    }
+  }
+}

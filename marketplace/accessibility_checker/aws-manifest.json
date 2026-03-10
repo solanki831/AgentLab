@@ -1,0 +1,23 @@
+{
+  "SchemaVersion": "1.0",
+  "ProductTitle": "AI Accessibility Checker",
+  "ProductDescription": "WCAG 2.1 compliance checker powered by AI. Analyzes web pages for accessibility issues and provides detailed recommendations for improvement.",
+  "ProductVersion": "1.0.0",
+  "ProductCategory": "Accessibility",
+  "Pricing": {
+    "Model": "per_call",
+    "PricePerUnit": 0.04,
+    "Currency": "USD"
+  },
+  "SupportInformation": {
+    "Email": "support@aitestingsuite.com",
+    "Documentation": "https://docs.example.com/accessibility-checker"
+  },
+  "Tags": [
+    "accessibility",
+    "wcag",
+    "a11y",
+    "compliance",
+    "web"
+  ]
+}

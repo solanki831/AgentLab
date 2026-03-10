@@ -1,0 +1,71 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "AI/ML Model Tester",
+    "version": "1.0.0",
+    "description": "Machine learning model testing for accuracy, bias detection, fairness metrics, and model drift. Essential for responsible AI deployment.",
+    "contact": {
+      "email": "support@aitestingsuite.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.yourdomain.com/v1",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/agents/ml_model_tester/run": {
+      "post": {
+        "summary": "Run AI/ML Model Tester",
+        "description": "Machine learning model testing for accuracy, bias detection, fairness metrics, and model drift. Essential for responsible AI deployment.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "description": "Target URL to test"
+                  },
+                  "options": {
+                    "type": "object",
+                    "description": "Additional options"
+                  }
+                },
+                "required": [
+                  "url"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Test results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "report": {
+                      "type": "string"
+                    },
+                    "score": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

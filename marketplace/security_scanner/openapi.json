@@ -1,0 +1,71 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "AI Security Scanner",
+    "version": "1.0.0",
+    "description": "Advanced security vulnerability scanner powered by AI. Checks for OWASP Top 10, security headers, SSL/TLS configuration, and provides actionable recommendations.",
+    "contact": {
+      "email": "support@aitestingsuite.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.yourdomain.com/v1",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/agents/security_scanner/run": {
+      "post": {
+        "summary": "Run AI Security Scanner",
+        "description": "Advanced security vulnerability scanner powered by AI. Checks for OWASP Top 10, security headers, SSL/TLS configuration, and provides actionable recommendations.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "description": "Target URL to test"
+                  },
+                  "options": {
+                    "type": "object",
+                    "description": "Additional options"
+                  }
+                },
+                "required": [
+                  "url"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Test results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "report": {
+                      "type": "string"
+                    },
+                    "score": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

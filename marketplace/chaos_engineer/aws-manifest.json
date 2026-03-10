@@ -1,0 +1,23 @@
+{
+  "SchemaVersion": "1.0",
+  "ProductTitle": "AI Chaos Engineering Agent",
+  "ProductDescription": "Chaos engineering and fault injection testing. Validates system resilience under adverse conditions including latency, errors, and resource constraints.",
+  "ProductVersion": "1.0.0",
+  "ProductCategory": "Reliability",
+  "Pricing": {
+    "Model": "per_call",
+    "PricePerUnit": 0.08,
+    "Currency": "USD"
+  },
+  "SupportInformation": {
+    "Email": "support@aitestingsuite.com",
+    "Documentation": "https://docs.example.com/chaos-engineer"
+  },
+  "Tags": [
+    "chaos",
+    "resilience",
+    "fault-injection",
+    "reliability",
+    "testing"
+  ]
+}

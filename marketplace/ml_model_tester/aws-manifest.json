@@ -1,0 +1,25 @@
+{
+  "SchemaVersion": "1.0",
+  "ProductTitle": "AI/ML Model Tester",
+  "ProductDescription": "Machine learning model testing for accuracy, bias detection, fairness metrics, and model drift. Essential for responsible AI deployment.",
+  "ProductVersion": "1.0.0",
+  "ProductCategory": "AI/ML",
+  "Pricing": {
+    "Model": "per_call",
+    "PricePerUnit": 0.2,
+    "Currency": "USD"
+  },
+  "SupportInformation": {
+    "Email": "support@aitestingsuite.com",
+    "Documentation": "https://docs.example.com/ml-model-tester"
+  },
+  "Tags": [
+    "ai",
+    "ml",
+    "model",
+    "bias",
+    "fairness",
+    "testing",
+    "mlops"
+  ]
+}

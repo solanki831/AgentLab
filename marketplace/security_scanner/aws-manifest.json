@@ -1,0 +1,23 @@
+{
+  "SchemaVersion": "1.0",
+  "ProductTitle": "AI Security Scanner",
+  "ProductDescription": "Advanced security vulnerability scanner powered by AI. Checks for OWASP Top 10, security headers, SSL/TLS configuration, and provides actionable recommendations.",
+  "ProductVersion": "1.0.0",
+  "ProductCategory": "Security",
+  "Pricing": {
+    "Model": "per_call",
+    "PricePerUnit": 0.05,
+    "Currency": "USD"
+  },
+  "SupportInformation": {
+    "Email": "support@aitestingsuite.com",
+    "Documentation": "https://docs.example.com/security-scanner"
+  },
+  "Tags": [
+    "security",
+    "testing",
+    "vulnerability",
+    "scanner",
+    "api"
+  ]
+}

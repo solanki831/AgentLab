@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pdb
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.whl
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDE / editors
+.idea/
+.vscode/
+*.suo
+*.user
+*.swp
+*.swo
+
+# Playwright
+.playwright-mcp/
+test-results/
+playwright-report/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Test databases (runtime state — not source)
+test_healing_db/
+test_plans_db/
+
+# Misc
+verification_results.json
+*.log
+*.tmp

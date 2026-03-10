@@ -1,0 +1,22 @@
+{
+  "SchemaVersion": "1.0",
+  "ProductTitle": "AI Performance Tester",
+  "ProductDescription": "Intelligent performance and load testing agent. Measures response times, throughput, and provides performance grades with optimization recommendations.",
+  "ProductVersion": "1.0.0",
+  "ProductCategory": "Performance",
+  "Pricing": {
+    "Model": "per_call",
+    "PricePerUnit": 0.03,
+    "Currency": "USD"
+  },
+  "SupportInformation": {
+    "Email": "support@aitestingsuite.com",
+    "Documentation": "https://docs.example.com/performance-tester"
+  },
+  "Tags": [
+    "performance",
+    "load-testing",
+    "benchmark",
+    "api"
+  ]
+}

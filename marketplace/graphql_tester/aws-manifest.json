@@ -1,0 +1,23 @@
+{
+  "SchemaVersion": "1.0",
+  "ProductTitle": "AI GraphQL Tester",
+  "ProductDescription": "GraphQL API testing agent. Validates queries, mutations, subscriptions and performs schema introspection with intelligent analysis.",
+  "ProductVersion": "1.0.0",
+  "ProductCategory": "API Testing",
+  "Pricing": {
+    "Model": "per_call",
+    "PricePerUnit": 0.04,
+    "Currency": "USD"
+  },
+  "SupportInformation": {
+    "Email": "support@aitestingsuite.com",
+    "Documentation": "https://docs.example.com/graphql-tester"
+  },
+  "Tags": [
+    "graphql",
+    "api",
+    "query",
+    "schema",
+    "testing"
+  ]
+}
