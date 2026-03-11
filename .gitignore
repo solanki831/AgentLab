@@ -39,6 +39,8 @@ desktop.ini
 # Test databases (runtime state — not source)
 test_healing_db/
 test_plans_db/
+playwright_healing_db/
+playwright_plans_db/
 
 # Misc
 verification_results.json

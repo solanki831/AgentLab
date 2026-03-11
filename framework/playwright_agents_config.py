@@ -6,7 +6,7 @@ All values can be configured via environment variables - no hard-coded defaults
 """
 
 import os
-from typing import Dict, Any, Optional
+from typing import Dict, Any, Optional, List
 
 # =============================================================================
 # OLLAMA LLM CONFIGURATION

@@ -19,6 +19,12 @@ import os
 import logging
 import traceback
 
+try:
+    import nest_asyncio
+    nest_asyncio.apply()
+except ImportError:
+    pass  # nest_asyncio not installed; asyncio.run() may fail inside Streamlit
+
 # Add parent directory to path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -208,9 +214,10 @@ def init_session_state():
             "token": "",
             "api_key": "",
             "api_key_header": "X-API-Key",
-            "oauth_client_id": "",
-            "oauth_client_secret": "",
-            "oauth_token_url": "",
+            "client_id": "",
+            "client_secret": "",
+            "token_url": "",
+            "scope": "",
             "login_url": "",
             "username_field": "username",
             "password_field": "password",
@@ -1342,9 +1349,10 @@ def chunk_context(text: str, chunk_size: int = 800, overlap: int = 80) -> List[s
                 chunk = chunk[:last_space]
                 end = start + last_space
         chunks.append(chunk.strip())
-        start = end - overlap
-        if start <= 0:
+        new_start = end - overlap
+        if new_start <= start:  # no forward progress — prevent infinite loop
             break
+        start = new_start
 
     return [c for c in chunks if c]
 
@@ -1404,6 +1412,7 @@ async def execute_chain(
         step_config = step.get("config", {})
 
         # --- Build the input to send to the agent ---
+        chunks_used = 0
         if i == 0:
             combined_input = step_input_prefix or context
         else:
@@ -1429,7 +1438,7 @@ async def execute_chain(
             "agent": step_agent,
             "input_preview": combined_input[:200],
             "output": None,
-            "chunks_used": locals().get("chunks_used", 0),
+            "chunks_used": chunks_used,
             "success": False,
             "time": 0.0,
             "error": None,
@@ -1623,7 +1632,7 @@ Authentication: {auth_type.upper()}
 Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 ═══════════════════════════════════════════════════════════
 
-📊 TEST RESULTS: {passed}/{total_tests} Passed ({(passed/total_tests)*100:.1f}%)
+📊 TEST RESULTS: {passed}/{total_tests} Passed ({(passed/total_tests*100) if total_tests else 0:.1f}%)
 ⏱️ EXECUTION TIME: {total_time:.3f}s
 {login_info}
 📋 TEST STEPS:
@@ -1658,6 +1667,7 @@ async def test_database_with_config(db_config: Dict) -> str:
     connection_status = "❌ FAILED"
     error_msg = ""
     query_result = None
+    result = -1  # network connectivity result (0 = success)
     
     # Test 1: Network connectivity
     try:
@@ -2051,7 +2061,7 @@ def render_header():
             ollama_status = f"✅ Ollama LLM ({len(models)} models)"
         else:
             ollama_status = "⚠️ Ollama Running (No models)"
-    except:
+    except Exception:
         ollama_status = "❌ Ollama Offline"
     
     st.title("🔬 AgentLab — Chain, Test & Evaluate")
@@ -2757,7 +2767,7 @@ def render_orchestration():
     agent_cols = st.columns(min(agent_count, 6))
     
     for idx, (agent_key, agent_cap) in enumerate(orchestrator.agents.items()):
-        with agent_cols[idx]:
+        with agent_cols[idx % len(agent_cols)]:
             status_icon = "🟢" if agent_cap.is_available else "🔴"
             st.markdown(f"""
             <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; text-align: center;">
